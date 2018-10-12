@@ -1,10 +1,11 @@
 const express = require('express');
 const axios = require('axios');
-const API_KEY = 'e0be4007';
 
 const app = express();
 
 const PORT = process.env.PORT || 5000;
+
+app.use(express.static(__dirname + '/client/build'));
 
 // API endpoints
 app.get('/movies/:id', async (req, res) => {
